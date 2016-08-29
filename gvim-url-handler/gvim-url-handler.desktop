@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=GVim URL Hanler
+Encoding=UTF-8
+Comment=Edit text files using GVim
+Exec=/usr/local/bin/gvim-url-handler %U
+Terminal=false
+Icon=/usr/src/vim/runtime/vim48x48.xpm
+Categories=Application;Utility;TextEditor;
+MimeType=text/plain;x-scheme-handler/gvim;
+StartupNotify=true
+StartupWMClass=GVIM

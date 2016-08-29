@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+# /usr/local/bin/vim-url-handle
+
+require 'cgi'
+require 'uri'
+begin
+  full_path = ARGV[0]
+  exit unless full_path
+  full_path = full_path.split('url=')[1].sub('&', '?') if full_path.include? 'url='
+
+  uri = URI.parse(full_path)
+  file = uri.path
+  query = CGI.parse(uri.query)
+
+  line = query['line'].first
+  column = query['column'].first
+
+  line = line.nil? ? 0 : line
+  column = column.nil? ? 0 : column
+
+  exec "gnome-terminal -x vim '+call cursor(#{line}, #{column})' #{file}"
+rescue URI::InvalidURIError
+end

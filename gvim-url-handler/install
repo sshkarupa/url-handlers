@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+sudo cp gvim-url-handler.desktop /usr/share/applications
+sudo update-desktop-database
+
+sudo cp gvim-url-handler /usr/local/bin/
+sudo chmod a+x /usr/local/bin/gvim-url-handler

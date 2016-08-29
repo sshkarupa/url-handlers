@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+sudo cp subl-url-handler.desktop /usr/share/applications
+sudo update-desktop-database
+
+sudo cp subl-url-handler /usr/local/bin/
+sudo chmod a+x /usr/local/bin/subl-url-handler
